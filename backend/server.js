@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json()); // Middleware to parse JSON data
 
 // Database Connection
-mongoose.connect('mongodb+srv://ZorawaR:nitish@cluster0.71mcr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('Your Database Connection String', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })

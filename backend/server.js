@@ -17,7 +17,10 @@ mongoose.connect('Your Database Connection String', {
 })
   .then(() => console.log('MongoDB connected successfully'))
   .catch(err => console.error('MongoDB connection failed:', err));
+app.get('/test', (req, res) =>{
 
+res.send('server running')
+})
 // Routes
 app.use('/api/todos', todoRoutes);  // Use the todo routes for CRUD operations
 

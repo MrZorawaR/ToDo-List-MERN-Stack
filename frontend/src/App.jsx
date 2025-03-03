@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import DatePickerDemo from "./components/ui/date"; // Ensure this import path is correct
+import DatePickerDemo from "./components/ui/date"; 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -18,7 +18,6 @@ const App = () => {
   const [editingId, setEditingId] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
 
-  // Fetch todos from the backend when the component mounts
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/todos")
@@ -112,7 +111,7 @@ const App = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold text-center mb-6">Todo List</h1>
+      <h1 className="text-4xl font-bold text-center mb-6">Task Management System</h1>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4">
           <Input
@@ -141,7 +140,7 @@ const App = () => {
       </form>
       <div className="flex flex-col gap-4 mt-6">
         {sortedTodos.length === 0 ? (
-          <p className="text-center">No todos available.</p>
+          <p className="text-center">No task available.</p>
         ) : (
           sortedTodos.map((todo) => (
             <div key={todo._id} className="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow-md">
@@ -162,7 +161,7 @@ const App = () => {
                     className="transition duration-200 hover:bg-green-600 hover:text-white"
                   >
                     Complete
-                  </NextUIButton>
+                  </NextUIButton> 
                 )}
                 <NextUIButton
                   onClick={() => handleEdit(todo._id, todo.task, todo.priority, todo.dueDate)}

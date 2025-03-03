@@ -4,7 +4,7 @@ import { Calendar as CalendarIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar"; // Ensure this path is correct
+import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
@@ -12,11 +12,11 @@ import {
 } from "@/components/ui/popover";
 
 const DatePickerDemo = ({ onChange }) => {
-  const [date, setDate] = React.useState(null); // Remove type annotation
+  const [date, setDate] = React.useState(null); 
 
-  const handleDateSelect = (selectedDate) => { // Remove type annotation
+  const handleDateSelect = (selectedDate) => { 
     setDate(selectedDate);
-    onChange(selectedDate); // Call the onChange prop to update the parent state
+    onChange(selectedDate); 
   };
 
   return (
@@ -45,4 +45,4 @@ const DatePickerDemo = ({ onChange }) => {
   );
 };
 
-export default DatePickerDemo; // Exporting the component as default
+export default DatePickerDemo;

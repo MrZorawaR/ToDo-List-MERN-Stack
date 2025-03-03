@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/todos")
+      .get("nitish-todo-api.vercel.app/api/todos")
       .then((response) => {
         const updatedTodos = response.data.map((todo) => {
           if (new Date(todo.dueDate) < new Date() && todo.completed) {
@@ -51,7 +51,7 @@ const App = () => {
 
     if (isEditing) {
       axios
-        .put(`http://localhost:5000/api/todos/${editingId}`, newTodo)
+        .put(`nitish-todo-api.vercel.app/api/todos/${editingId}`, newTodo)
         .then((response) => {
           setTodos(
             todos.map((todo) => (todo._id === editingId ? response.data : todo))
@@ -61,7 +61,7 @@ const App = () => {
         .catch((error) => console.error(error));
     } else {
       axios
-        .post("http://localhost:5000/api/todos", newTodo)
+        .post("nitish-todo-api.vercel.app/api/todos", newTodo)
         .then((response) => {
           setTodos([...todos, response.data]);
           clearForm();
@@ -72,7 +72,7 @@ const App = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/api/todos/${id}`)
+      .delete(`nitish-todo-api.vercel.app/api/todos/${id}`)
       .then(() => {
         setTodos(todos.filter((todo) => todo._id !== id));
       })
@@ -89,7 +89,7 @@ const App = () => {
 
   const handleComplete = (id) => {
     axios
-      .put(`http://localhost:5000/api/todos/${id}`, { completed: true })
+      .put(`nitish-todo-api.vercel.app/api/todos/${id}`, { completed: true })
       .then((response) => {
         setTodos(todos.map((todo) => (todo._id === id ? response.data : todo)));
       })
